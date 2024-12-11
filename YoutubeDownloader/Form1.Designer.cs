@@ -34,6 +34,7 @@ namespace YoutubeDownloader
             this.txtYoutubeUrl = new System.Windows.Forms.TextBox();
             this.isim = new System.Windows.Forms.Label();
             this.durum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // downloadBtn
@@ -77,11 +78,21 @@ namespace YoutubeDownloader
             this.durum.Size = new System.Drawing.Size(0, 24);
             this.durum.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(179, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Youtube Url";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 187);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.durum);
             this.Controls.Add(this.isim);
             this.Controls.Add(this.txtYoutubeUrl);
@@ -106,6 +117,7 @@ namespace YoutubeDownloader
         private System.Windows.Forms.TextBox txtYoutubeUrl;
         private System.Windows.Forms.Label isim;
         private System.Windows.Forms.Label durum;
+        private System.Windows.Forms.Label label1;
     }
 }
 

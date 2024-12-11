@@ -181,7 +181,7 @@ namespace YoutubeDownloader
 
         private async void downloadBtn_Click(object sender, EventArgs e)
         {
-            if(txtYoutubeUrl.Text != "")
+            if (txtYoutubeUrl.Text != "")
             {
                 string pattern = @"(?:v=|\/)([a-zA-Z0-9_-]{11})";
 
@@ -195,7 +195,7 @@ namespace YoutubeDownloader
                         downloadBtn.Enabled = false;
                         webConnect request = new webConnect();
                         var cikti = request.httpPost("https://www.youtube.com/youtubei/v1/player?key=AIzaSyA8eiZmM1FaDVjRy-df2KTyQ_vz_yYM39w&hl=en", videoId);
-                       
+
                         dynamic jsondecoded = JsonConvert.DeserializeObject(cikti);
                         // JSON'u JArray olarak parse et
                         var count = jsondecoded.streamingData?.adaptiveFormats?.Count - 1;
@@ -215,9 +215,10 @@ namespace YoutubeDownloader
                         await DownloadFileInParts(url, outputFilePath, numberOfParts, orjinalIsim);
                         downloadBtn.Enabled = true;
                         durum.Text = "Tamamlandı...";
-                        
+
                     }
-                    catch (Exception ex) {
+                    catch (Exception ex)
+                    {
                         MessageBox.Show(ex.Message);
                     }
 
@@ -229,7 +230,10 @@ namespace YoutubeDownloader
                     MessageBox.Show("Video ID alınamadı.");
                 }
 
-                
+
+            }
+            else {
+                MessageBox.Show("Youtube Url yazın", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
